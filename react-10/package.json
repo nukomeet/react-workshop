@@ -1,0 +1,23 @@
+{
+  "name": "react-9",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "watchify --extension=js -o bundle.js main.js & python -m SimpleHTTPServer"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "dependencies": {
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-redux": "^3.1.0",
+    "redux": "^3.0.2"
+  },
+  "devDependencies": {
+    "browserify": "~10.2.4",
+    "babelify": "~6.1.2",
+    "watchify": "^3.3.1"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "react-6",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parallelshell \"npm run -s watch\" \"node server.js\"",
+    "watch": "watchify app.js -d -t babelify -o bundle.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.0",
+    "express": "^4.12.4",
+    "marked": "^0.3.3",
+    "react": "0.14.0",
+    "react-dom": "^0.14.0",
+    "whatwg-fetch": "^0.9.0"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.4",
+    "parallelshell": "^1.1.1",
+    "uglifyify": "^3.0.1",
+    "watchify": "^3.2.2"
+  }
+}
