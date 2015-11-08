@@ -2,7 +2,7 @@ class TodoList extends React.Component {
   render() {
     return (
       <ul>{this.props.items.map((item, idx) => {
-        return <li key={item.id}>{item} [<a href="#" onClick={this.props.handleDelete.bind(this, idx)}>x</a>]</li>;
+        return <li key={item.id}>{item} [<a href="#" onClick={this.props.handleDelete.bind(this, item)}>x</a>]</li>;
       })}</ul>
     );
   }
@@ -16,8 +16,8 @@ class TodoApp extends React.Component {
     }
   } 
   handleDelete(itemToDelete, e) {
-    var newItems = _.reject(this.state.items, function(item, idx) {
-        return idx == itemToDelete
+    var newItems = _.reject(this.state.items, function(item) {
+        return item === itemToDelete
     });
 
     this.setState({items: newItems});
@@ -48,7 +48,7 @@ class TodoApp extends React.Component {
         <TodoList items={this.state.items} handleDelete={this.handleDelete.bind(this)} />
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input onChange={this.handleChange.bind(this)} value={this.state.text} />
-          <button>{'Add #' + (this.state.items.length + 1)}</button>
+          <button>Add #{(this.state.items.length + 1)}</button>
         </form>
       </div>
     );

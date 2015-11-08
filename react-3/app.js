@@ -11,7 +11,6 @@ class ContentToggle extends React.Component {
     this.setState({
       showDetails: !this.state.showDetails
     });
-    this.refs.details.focus();
   } 
   handleKeyUp(event) {
     console.log(event);
@@ -25,11 +24,11 @@ class ContentToggle extends React.Component {
     }
     return (
       <div className="ContentToggle">
-        <h3 tabIndex="0" onClick={this.handleClick} 
+        <h3 tabIndex="0" onClick={this.handleClick.bind(this)} 
         onKeyUp={this.handleKeyUp.bind(this)} className={summaryClassName}>
           {this.props.summary}
         </h3>
-        <div ref="details" className="ContentToggle__Details">{details}</div>
+        <div className="ContentToggle__Details">{details}</div>
       </div>
     );
   }

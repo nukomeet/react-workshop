@@ -15,10 +15,10 @@ class CommentBox extends React.Component {
       dataType: 'json',
       success: (data) => {
         this.setState({data: data});
-      }.bind(this),
+      },
       error: (xhr, status, err) => {
         console.error(this.props.url, status, err.toString());
-      }.bind(this)
+      }
     });
   }
 
@@ -28,18 +28,18 @@ class CommentBox extends React.Component {
 
     this.setState({data: newComments});
 
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      type: 'POST',
-      data: comment,
-      success: (data) => {
-        this.setState({data: data});
-      }.bind(this),
-      error: (xhr, status, err) => {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
+    // $.ajax({
+    //   url: this.props.url,
+    //   dataType: 'json',
+    //   type: 'POST',
+    //   data: comment,
+    //   success: (data) => {
+    //     this.setState({data: data});
+    //   },
+    //   error: (xhr, status, err) => {
+    //     console.error(this.props.url, status, err.toString());
+    //   }
+    // });
   }
 
   componentDidMount() {
@@ -104,7 +104,7 @@ class CommentForm extends React.Component {
 
   render() {
     return (
-      <form className="commentForm" onSubmit={this.handleSubmit.bind(this)}>
+      <form className="commentForm" onSubmit={(e) => this.handleSubmit(e)}>
         <input type="text" placeholder="Your name" ref="author" />
         <input type="text" placeholder="Say somehting" ref="text" />
         <input type="submit" value="Post" />
@@ -113,4 +113,4 @@ class CommentForm extends React.Component {
   }
 }
 
-ReactDOM.render(<CommentBox url="comments.json" pollInterval={2000} />, document.getElementById('content'))
+ReactDOM.render(<CommentBox url="comments.json" pollInterval={10000} />, document.getElementById('content'))

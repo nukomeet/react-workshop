@@ -10,6 +10,8 @@
     go get kidoman/tools/serve
     serve
 
+    devd
+
 
 ## Agenda
 
@@ -156,6 +158,8 @@ We use the `ref` attribute to assign a name to a child component and
 1. Try to replace `refs` with state for the form
 2. Try to implement a proper backend so POSTing works
 
+- an issue with explicitly returning `204` status code
+
 #### React 6
 
 Let's use [Browserify][2]. 
@@ -219,6 +223,22 @@ new, connected component.
 1. Add a todo item removal.
 2. Mark as incomplete.
 3. Implement a server side data store.
+
+#### Intro do WebPack
+
+#### React 9a
+
+Simple webpack application.
+
+1. Convert React 8 to WebPack
+2. Convert React 9 to WebPack
+
+#### React 9b
+
+Hot reloading
+
+1. Add it to React 8
+2. Add it to React 9
 
 
 [1]: https://en.wikipedia.org/wiki/Cross-site_scripting

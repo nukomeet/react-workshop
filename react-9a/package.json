@@ -1,0 +1,19 @@
+{
+  "name": "react-starter",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app/main.js",
+  "dependencies": {
+    "react": "^0.12.2",
+    "babel-core": "^4.4.3",
+    "babel-loader": "^4.0.0",
+    "webpack": "^1.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "watch": "webpack --progress --colors --watch",
+    "deploy": "ENV=production webpack -p"
+  },
+  "author": "Zaiste",
+  "license": "MIT"
+}
